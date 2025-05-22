@@ -1,0 +1,29 @@
+resource "aws_instance" "web" {
+  ami           = "ami-0c02fb55956c7d316"  # Amazon Linux 2 AMI
+  instance_type = "t2.micro"
+  subnet_id     = element(var.subnet_ids, 0)
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  tags = {
+    Name = "Terraform-EC2"
+  }
+}
+
+resource "aws_security_group" "ec2_sg" {
+  name        = "ec2-sg"
+  description = "Allow SSH"
+  vpc_id      = var.vpc_id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
