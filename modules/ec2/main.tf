@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0c02fb55956c7d316"  # Amazon Linux 2 AMI
+  ami           = "ami-0af9569868786b23a"  # Amazon Linux 2 AMI
   instance_type = "t2.micro"
   subnet_id     = element(var.subnet_ids, 0)
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
