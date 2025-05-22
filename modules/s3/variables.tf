@@ -1,8 +1,10 @@
 variable "bucket_name" {
-  default = "terraform-cicd-demo-bucket-${random_id.id.hex}"
+  description = "Prefix for the S3 bucket name"
+  type        = string
 }
 
-
-resource "random_id" "id" {
-  byte_length = 4
+variable "tags" {
+  description = "Tags to assign to the bucket"
+  type        = map(string)
+  default     = {}
 }
