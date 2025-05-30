@@ -7,7 +7,6 @@ on:
 
   workflow_dispatch:  # Enables manual trigger for destroy job
 
-
 jobs:
   terraform:
     name: Terraform Plan and Apply
