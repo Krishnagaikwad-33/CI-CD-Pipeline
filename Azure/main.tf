@@ -66,3 +66,5 @@ resource "azurerm_windows_virtual_machine" "winvm" {
     version   = "latest"
   }
 }
+
+#vjsagfas
