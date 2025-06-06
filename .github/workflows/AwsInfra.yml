@@ -1,5 +1,4 @@
 name: Terraform Deploy and Destroy
-
 on:
   push:
     branches:
