@@ -3,6 +3,7 @@ name: Terraform Destroy
 on:
   workflow_dispatch:  # Enables manual trigger
 
+
 env:
   AWS_REGION: eu-west-1  # Update as needed
 
